@@ -10,6 +10,7 @@ namespace WebApplication2.Models
             : base(options)
         {
             Database.EnsureCreated();
+            
         }
 
     }

@@ -3,7 +3,6 @@ using WebApplication2.Models;
 var builder = WebApplication.CreateBuilder(args);
 string connection = "Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;";
 builder.Services.AddDbContext<CitiesContext>(options => options.UseSqlServer(connection));
-builder.Services.AddDbContext<CoordsContext>(options => options.UseSqlServer(connection));
 // Add services to the container.
 
 builder.Services.AddControllers();

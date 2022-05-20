@@ -23,7 +23,7 @@ namespace WebApplication2.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<City>>> Get()
         {  
-            return await db.Cities.ToListAsync();
+            return await db.Cities.ToListAsync();  
         }
         
 
@@ -36,4 +36,5 @@ namespace WebApplication2.Controllers
             return new ObjectResult(city);
         }
     }
+
 }
