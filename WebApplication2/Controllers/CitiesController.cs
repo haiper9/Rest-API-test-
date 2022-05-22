@@ -22,15 +22,16 @@ namespace WebApplication2.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<City>>> Get()
-        {  
-            return await db.Cities.ToListAsync();  
+        {
+            return await db.Cities.Include(x=>x.Coords).ToListAsync();
         }
+        
         
 
         [HttpGet("{id}")]
         public async Task<ActionResult<City>> Get(int id)
 {
-            City city = await db.Cities.FirstOrDefaultAsync(x => x.Id == id);
+            City city = await db.Cities.Include(x=>x.Coords).FirstOrDefaultAsync(x => x.Id == id);
             if (city == null)
                 return NotFound();
             return new ObjectResult(city);
